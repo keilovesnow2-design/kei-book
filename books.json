@@ -1,6 +1,11 @@
 {
   "kindle": [
     {
+      "asin": "TEST000001",
+      "title": "�y�e�X�g�z�����m�F�p�_�~�[",
+      "img": "https://images-na.ssl-images-amazon.com/images/P/B0FS35NBNT.01.LZZZZZZZ.jpg"
+    },
+    {
       "asin": "B0GWW9LJ24",
       "title": "Claude CodeによるAI駆動開発入門×note副業：デジタル資産の作り方",
       "img": "https://m.media-amazon.com/images/I/81dOVGFhl1L._SY522_.jpg"
