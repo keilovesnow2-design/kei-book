@@ -1,169 +1,154 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K. Nishitani 著書一覧 | Neutral Works</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
-      background: #f4f6f8;
-      color: #333;
-    }
-    .hero {
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: white;
-      padding: 64px 20px 48px;
-      text-align: center;
-    }
-    .hero h1 { font-size: 2rem; font-weight: bold; letter-spacing: 0.06em; margin-bottom: 10px; }
-    .hero .subtitle { font-size: 0.95rem; opacity: 0.65; margin-bottom: 20px; }
-    .hero .stats { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-    .hero .stat {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 8px 22px; border-radius: 24px; font-size: 0.82rem;
-    }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .section { padding: 52px 0 40px; }
-    .section-header {
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 32px; padding-bottom: 16px;
-      border-bottom: 2px solid #e2e8f0;
-    }
-    .section-icon { font-size: 1.6rem; }
-    .section-title { font-size: 1.3rem; font-weight: bold; color: #1a202c; }
-    .section-count { font-size: 0.82rem; color: #718096; margin-top: 3px; }
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-      gap: 20px;
-    }
-    .book-card {
-      background: white; border-radius: 12px; overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-      text-decoration: none; color: inherit;
-      display: flex; flex-direction: column;
-    }
-    .book-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(0,0,0,0.14); }
-    .book-cover-wrap {
-      width: 100%; aspect-ratio: 2/3; overflow: hidden;
-      background: #e2e8f0; flex-shrink: 0;
-    }
-    .book-cover {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.3s ease;
-    }
-    .book-card:hover .book-cover { transform: scale(1.04); }
-    .book-info { padding: 13px 13px 15px; display: flex; flex-direction: column; flex: 1; }
-    .book-title {
-      font-size: 0.78rem; line-height: 1.55; font-weight: bold;
-      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
-      overflow: hidden; color: #2d3748; flex: 1; margin-bottom: 10px;
-    }
-    .book-btn {
-      display: block; text-align: center; font-size: 0.72rem;
-      font-weight: bold; padding: 6px 0; border-radius: 6px; letter-spacing: 0.03em;
-    }
-    .kindle-btn { background: #FF9900; color: white; }
-    .paperback-btn { background: #232F3E; color: white; }
-    .divider { border: none; border-top: 1px solid #e2e8f0; }
-    footer {
-      background: #1a202c; color: rgba(255,255,255,0.45);
-      text-align: center; padding: 28px; font-size: 0.78rem; margin-top: 48px;
-    }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.5rem; }
-      .books-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K. Nishitani 著書一覧 | Neutral Works</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hiragino Sans','Yu Gothic','Meiryo',sans-serif;background:#f4f6f8;color:#333}
+.hero{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);color:#fff;padding:64px 20px 48px;text-align:center}
+.hero h1{font-size:2rem;letter-spacing:.06em;margin-bottom:10px}
+.hero .subtitle{font-size:.95rem;opacity:.65;margin-bottom:20px}
+.hero .stats{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.hero .stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 22px;border-radius:24px;font-size:.82rem}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:52px 0 40px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:32px;padding-bottom:16px;border-bottom:2px solid #e2e8f0}
+.section-icon{font-size:1.6rem}.section-title{font-size:1.3rem;font-weight:bold;color:#1a202c}.section-count{font-size:.82rem;color:#718096;margin-top:3px}
+.books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:20px}
+.book-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.07);transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.book-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.14)}
+.book-cover-wrap{width:100%;aspect-ratio:2/3;overflow:hidden;background:#e2e8f0}
+.book-cover{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.book-card:hover .book-cover{transform:scale(1.04)}
+.book-info{padding:13px 13px 15px;display:flex;flex-direction:column;flex:1}
+.book-title{font-size:.78rem;line-height:1.55;font-weight:bold;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;color:#2d3748;flex:1;margin-bottom:10px}
+.book-btn{display:block;text-align:center;font-size:.72rem;font-weight:bold;padding:6px 0;border-radius:6px;color:#fff}
+.kindle-btn{background:#FF9900}.paperback-btn{background:#232F3E}
+footer{background:#1a202c;color:rgba(255,255,255,.45);text-align:center;padding:28px;font-size:.78rem;margin-top:48px}
+@media(max-width:600px){.hero h1{font-size:1.5rem}.books-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@page{size:A4;margin:8mm}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#fff}.hero{padding:28px 16px 24px}.section{padding:20px 0 12px}.section-header{margin-bottom:16px}.books-grid{grid-template-columns:repeat(4,1fr);gap:12px}.book-card{break-inside:avoid;box-shadow:none;border:1px solid #e2e8f0}.book-card:hover{transform:none;box-shadow:none}footer{margin-top:16px;padding:14px}}
+</style>
 </head>
 <body>
-
 <div class="hero">
   <h1>K. Nishitani 著書一覧</h1>
   <p class="subtitle">Neutral Works ／ aiエージェント・副業・プロンプトエンジニアリング研究室</p>
-  <div class="stats">
-    <span class="stat" id="stat-kindle"></span>
-    <span class="stat" id="stat-paperback"></span>
-    <span class="stat" id="stat-total"></span>
-  </div>
+  <div class="stats"><span class="stat">📱 電子書籍 19冊</span><span class="stat">📚 ペーパーバック 6冊</span><span class="stat">合計 25冊</span></div>
 </div>
-
 <div class="container">
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">📱</div>
-      <div>
-        <div class="section-title">電子書籍（Kindle版）</div>
-        <div class="section-count" id="kindle-count"></div>
-      </div>
-    </div>
-    <div class="books-grid" id="kindle-grid"></div>
+    <div class="section-header"><div class="section-icon">📱</div><div><div class="section-title">電子書籍（Kindle版）</div><div class="section-count">19冊 ／ Kindle Unlimited 対応あり</div></div></div>
+    <div class="books-grid">
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0GWW9LJ24" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81dOVGFhl1L._SY522_.jpg" alt="Claude CodeによるAI駆動開発入門×note副業：デジタル資産の作り方" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">Claude CodeによるAI駆動開発入門×note副業：デジタル資産の作り方</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FS35NBNT" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/815ppBrLWLL._SY522_.jpg" alt="革新！音声まで作る動画AI Veo3の衝撃: 誰でもプロ級映像を生み出せる新時代" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">革新！音声まで作る動画AI Veo3の衝撃: 誰でもプロ級映像を生み出せる新時代</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FLW19YMJ" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71xzTUaTKXL._SY522_.jpg" alt="自由自在に操るYAMLプロンプトーChatGPT完全攻略ー: 精度爆上がり確定！" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">自由自在に操るYAMLプロンプトーChatGPT完全攻略ー: 精度爆上がり確定！</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0GT24HKNT" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81QRJdAhQlL._SY522_.jpg" alt="OpenClaw(オープンクロー)完全活用ガイド: プログラミング不要のAIエージェントで1人起業" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">OpenClaw(オープンクロー)完全活用ガイド: プログラミング不要のAIエージェントで1人起業</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0GCY1TBTG" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81YRHnb6PxL._SY522_.jpg" alt="マンガでわかる！Wan2.2完全ガイド: 知識ゼロでも最速でプロ級動画クリエイターへ" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">マンガでわかる！Wan2.2完全ガイド: 知識ゼロでも最速でプロ級動画クリエイターへ</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FTPT4KRW" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81xptCreLcL._SY522_.jpg" alt="【Wan2.2完全ガイド】無料AI動画クリエイター: ComfyUI &amp; EasyWan2.2でプロ並み動画" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">【Wan2.2完全ガイド】無料AI動画クリエイター: ComfyUI &amp; EasyWan2.2でプロ並み動画</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FVBKVNK1" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81+cXsxzyoL._SY522_.jpg" alt="AIに救われた日: ChatGPTがくれた希望" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">AIに救われた日: ChatGPTがくれた希望</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FSYNZPVT" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81hgFkXqpPL._SY522_.jpg" alt="Nano Banana革命！: 画像生成が超簡単！Google Gemini × 副業 × 漫画作成" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">Nano Banana革命！: 画像生成が超簡単！Google Gemini × 副業 × 漫画作成</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FL1GZ2F7" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/61u3mCJTrLL._SY522_.jpg" alt="振り子の法則: ととのうメンタル" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">振り子の法則: ととのうメンタル</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FRZK5NTV" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81T0Mtgu2QL._SY522_.jpg" alt="AI検索に選ばれる方法: ゼロクリック時代のAEO戦略" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">AI検索に選ばれる方法: ゼロクリック時代のAEO戦略</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FRDRPYJP" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81TT9vXc3DL._SY522_.jpg" alt="インターネット都市伝説の世界へ: SNSとAIに潜む&quot;ヤバすぎる現実&quot;" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">インターネット都市伝説の世界へ: SNSとAIに潜む&quot;ヤバすぎる現実&quot;</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FR3WXJYD" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81gemSmcbNL._SY522_.jpg" alt="目指せ効率化！ 今使うべき対話型AI9ツールとは？: 経営者とビジネス実務者のための導入ガイド" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">目指せ効率化！ 今使うべき対話型AI9ツールとは？: 経営者とビジネス実務者のための導入ガイド</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FMPHJT56" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71gTsru+6AL._SY522_.jpg" alt="くるみの大冒険" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">くるみの大冒険</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FQCYNV8J" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81ppJPJODHL._SY522_.jpg" alt="AI×新しい挑戦: AIは、あなたの&quot;相棒&quot;になる！" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">AI×新しい挑戦: AIは、あなたの&quot;相棒&quot;になる！</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FKN381BY" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/711ut4izbFL._SY522_.jpg" alt="副業会社員が絶対に損しない確定申告＆節税の教科書" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">副業会社員が絶対に損しない確定申告＆節税の教科書</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FPBPJXGG" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71SEeTxG5wL._SY522_.jpg" alt="AI時代の転職成功術: AI自己分析・面接準備・50代転職成功法則" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">AI時代の転職成功術: AI自己分析・面接準備・50代転職成功法則</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FMP7KRB1" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/81fiTYDZ+AL._SY522_.jpg" alt="りんちゃんとくりくんの秋のピクニック" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">りんちゃんとくりくんの秋のピクニック</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FMH2HKJY" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71uBaYCupjL._SY522_.jpg" alt="PCが苦手な人ほどAIが得意になる理由: AI時代で無敵になれた" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">PCが苦手な人ほどAIが得意になる理由: AI時代で無敵になれた</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FKVQK2RC" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71glXQ7RsqL._SY522_.jpg" alt="会社員でもできる！ChatGPT副業で月5万稼ぐ初心者完全ガイド" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">会社員でもできる！ChatGPT副業で月5万稼ぐ初心者完全ガイド</div><span class="book-btn kindle-btn">Amazonで見る</span></div>
+    </a></div>
   </section>
-
-  <hr class="divider">
-
+  <hr style="border:none;border-top:1px solid #e2e8f0">
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">📚</div>
-      <div>
-        <div class="section-title">紙書籍（ペーパーバック）</div>
-        <div class="section-count" id="paperback-count"></div>
-      </div>
-    </div>
-    <div class="books-grid" id="paperback-grid"></div>
+    <div class="section-header"><div class="section-icon">📚</div><div><div class="section-title">紙書籍（ペーパーバック）</div><div class="section-count">6冊</div></div></div>
+    <div class="books-grid">
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0GX76FM9R" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71wGCr0tFPL._SY522_.jpg" alt="デジタル資産の作り方：Claude CodeによるAI駆動開発入門×note副業" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">デジタル資産の作り方：Claude CodeによるAI駆動開発入門×note副業</div><span class="book-btn paperback-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0GVS9ZBJD" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71Ct2VvAQ-L._SY522_.jpg" alt="革新！音声まで作る動画AI Veo3の衝撃: プロに迫る品質の映像を生み出せる新時代" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">革新！音声まで作る動画AI Veo3の衝撃: プロに迫る品質の映像を生み出せる新時代</div><span class="book-btn paperback-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0GVQHZH46" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71st7xtS9vL._SY522_.jpg" alt="自由自在に操るYAMLプロンプトーChatGPT完全攻略ー: 精度爆上がり確定！" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">自由自在に操るYAMLプロンプトーChatGPT完全攻略ー: 精度爆上がり確定！</div><span class="book-btn paperback-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0GTH5RQYL" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71iC4OLLBSL._SY522_.jpg" alt="OpenClaw(オープンクロー)完全活用ガイド: プログラミング不要のAIエージェントで1人起業" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">OpenClaw(オープンクロー)完全活用ガイド: プログラミング不要のAIエージェントで1人起業</div><span class="book-btn paperback-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0GRR2Y6TJ" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/71qHcRkFLnL._SY522_.jpg" alt="マンガでわかる！Wan2.2完全ガイド: 知識ゼロでも最速でプロ級動画クリエイターへ" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">マンガでわかる！Wan2.2完全ガイド: 知識ゼロでも最速でプロ級動画クリエイターへ</div><span class="book-btn paperback-btn">Amazonで見る</span></div>
+    </a>
+    <a class="book-card" href="https://www.amazon.co.jp/dp/B0FXV2DMYT" target="_blank" rel="noopener">
+      <div class="book-cover-wrap"><img class="book-cover" src="https://m.media-amazon.com/images/I/716CtYmdC1L._SY522_.jpg" alt="【Wan2.2完全ガイド】無料AI動画クリエイター: ComfyUI &amp; EasyWan2.2でプロ並み動画" loading="lazy"></div>
+      <div class="book-info"><div class="book-title">【Wan2.2完全ガイド】無料AI動画クリエイター: ComfyUI &amp; EasyWan2.2でプロ並み動画</div><span class="book-btn paperback-btn">Amazonで見る</span></div>
+    </a></div>
   </section>
 </div>
-
-<footer>
-  &copy; 2025 K. Nishitani / Neutral Works. All Rights Reserved.
-</footer>
-
-<script>
-// 本のデータは books.json にあります（著書一覧メーカーが更新します）
-let BOOKS = { kindle: [], paperback: [] };
-
-// ── 以下は変更不要（自動で画面を生成します）──────────────
-
-function buildCard(book, type) {
-  const url = `https://www.amazon.co.jp/dp/${book.asin}`;
-  const btnClass = type === 'kindle' ? 'kindle-btn' : 'paperback-btn';
-  return `
-    <a class="book-card" href="${url}" target="_blank" rel="noopener">
-      <div class="book-cover-wrap">
-        <img class="book-cover" src="${book.img}" alt="${book.title}" loading="lazy">
-      </div>
-      <div class="book-info">
-        <div class="book-title">${book.title}</div>
-        <span class="book-btn ${btnClass}">Amazonで見る</span>
-      </div>
-    </a>`;
-}
-
-function render() {
-  const kn = BOOKS.kindle.length;
-  const pb = BOOKS.paperback.length;
-
-  document.getElementById('stat-kindle').textContent    = `📱 電子書籍 ${kn}冊`;
-  document.getElementById('stat-paperback').textContent = `📚 ペーパーバック ${pb}冊`;
-  document.getElementById('stat-total').textContent     = `合計 ${kn + pb}冊`;
-  document.getElementById('kindle-count').textContent   = `${kn}冊 ／ Kindle Unlimited 対応あり`;
-  document.getElementById('paperback-count').textContent = `${pb}冊`;
-
-  document.getElementById('kindle-grid').innerHTML =
-    BOOKS.kindle.map(b => buildCard(b, 'kindle')).join('');
-  document.getElementById('paperback-grid').innerHTML =
-    BOOKS.paperback.map(b => buildCard(b, 'paperback')).join('');
-}
-
-fetch("books.json?"+Date.now())
-  .then(r => r.json())
-  .then(d => { BOOKS = { kindle: d.kindle || [], paperback: d.paperback || [] }; render(); })
-  .catch(() => { document.getElementById("kindle-count").textContent = "読み込みに失敗しました。再読み込みしてください"; });
-</script>
-
+<footer>&copy; 2025 K. Nishitani / Neutral Works. All Rights Reserved.</footer>
 </body>
 </html>
